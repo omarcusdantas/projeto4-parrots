@@ -38,4 +38,11 @@ function renderCards() {
         cardsList.innerHTML += `<li class="card"><img class="back-face" src="./src/img/back.png" alt="back of the card">` +
         `<img class="front-face" src="${cardImages[i]}" alt="front of the card"></li>`;
     }
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => card.addEventListener('click', flipCard));
 }
+
+function flipCard() {
+    this.classList.toggle('flip');
+}
+
