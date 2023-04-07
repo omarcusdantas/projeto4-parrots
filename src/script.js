@@ -1,10 +1,10 @@
-const images = [ '../images/bobrossparrot.gif', 
-'../images/explodyparrot.gif',
-'../images/fiestaparrot.gif',
-'../images/metalparrot.gif',
-'../images/revertitparrot.gif',
-'../images/tirpletsparrot.gif',
-'../images/unicornparrot.gif' ];
+const images = [ './src/img/bobrossparrot.gif', 
+'./src/img/explodyparrot.gif',
+'./src/img/fiestaparrot.gif',
+'./src/img/metalparrot.gif',
+'./src/img/revertitparrot.gif',
+'./src/img/tripletsparrot.gif',
+'./src/img/unicornparrot.gif' ];
 
 let cardImages = [];
 let numberCards = 0;
@@ -24,9 +24,18 @@ function shuffleImages() {
     handleImages = handleImages.splice(0, numberCards/2);
     handleImages = handleImages.concat(handleImages);
     cardImages = handleImages.sort(randomShuffle);
-    alert(cardImages);
+    renderCards();
 }
 
 function randomShuffle() { 
 	return Math.random() - 0.5; 
+}
+
+function renderCards() {
+    const cardsList = document.querySelector('.cards-container');
+    cardsList.innerHTML = '';
+    for (let i = 0; i < cardImages.length; i++) {
+        cardsList.innerHTML += `<li class="card"><img class="back-face" src="./src/img/back.png" alt="back of the card">` +
+        `<img class="front-face" src="${cardImages[i]}" alt="front of the card"></li>`;
+    }
 }
