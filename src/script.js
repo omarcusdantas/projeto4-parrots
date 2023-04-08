@@ -38,8 +38,9 @@ function renderCards(cardImages) {
     const cardsList = document.querySelector('.cards-container');
     cardsList.innerHTML = '';
     for (let i = 0; i < cardImages.length; i++) {
-        cardsList.innerHTML += `<li class="card" onclick="manageGame(this)"><img class="back-face" src="./src/img/back.png" alt="back of the card">` +
-        `<img class="front-face" src="./src/img/${cardImages[i]}" alt="front of the card"></li>`;
+        cardsList.innerHTML += `<li class="card" data-test="card" onclick="manageGame(this)">
+        <img class="back-face" data-test="face-down-image" src="./src/img/back.png" alt="back of the card">
+        <img class="front-face"  data-test="face-up-image" src="./src/img/${cardImages[i]}" alt="front of the card"></li>`;
     }
 }
 
@@ -63,7 +64,7 @@ function manageGame(card) {
     flipCard(card);
     secondCard = card;
     turns ++;
-    setTimeout(compareCards,1000);         
+    setTimeout(compareCards,200);         
 }
 
 function compareCards() {
