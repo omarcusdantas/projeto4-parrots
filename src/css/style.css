@@ -1,67 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #EEF9BF;
+  font-family: "Roboto", sans-serif;
+  background-color: #eef9bf;
 }
 
 h1 {
-    color: #75B79E;
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 66px;
+  color: #75b79e;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 66px;
+  text-align: center;
+}
+
+h2 {
+  color: #86bd8d;
+  font-weight: 700;
+  font-size: 36px;
+  height: 100px;
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  max-width: 1100px;
+  position: relative;
+}
+
+.stopwatch {
+  right: 25px;
+  top: 25px;
+  position: absolute;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+  margin: 0 30px;
 }
 
 .cards-container {
-    display: flex;
-    justify-content: center;
-    max-width: 1000px;
-    flex-wrap: wrap;
-    gap: 35px;
-    perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  gap: 35px;
+  perspective: 1000px;
 }
 
 .card {
-    width: 117px;
-    height: 146px;
-    background-color: #A7E9AF;
-    border: 1px solid #99CEA8;
-    border-radius: 5px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform .5s;
+  width: 117px;
+  height: 146px;
+  background-color: #a7e9af;
+  border: 1px solid #99cea8;
+  border-radius: 5px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
 
-.front-face, .back-face {
-    width: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    backface-visibility: hidden;
+.front-face,
+.back-face {
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
 }
 
 .front-face {
-    transform: translate(-50%, -50%) rotateY(180deg);
-  }
+  transform: translate(-50%, -50%) rotateY(180deg);
+}
 
 .flip {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    max-width: 500px;
+  }
+
+  header {
+    padding: 0 30px;
+    margin: 40px 0;
+  }
+
+  main {
+    margin: 30px 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  header {
+    height: 80px;
+  }
+
+  .stopwatch {
+    top: 100px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+  }
 }
