@@ -38,9 +38,12 @@ function renderCards(cardImages) {
     const cardsList = document.querySelector('.cards-container');
     cardsList.innerHTML = '';
     for (let i = 0; i < cardImages.length; i++) {
-        cardsList.innerHTML += `<li data-test="card" class="card" onclick="manageGame(this)">`+
-        `<img data-test="face-down-image" class="back-face" src="./src/img/back.png" alt="back of the card">`+
-        `<img data-test="face-up-image" class="front-face" src="./src/img/${cardImages[i]}" alt="front of the card"></li>`;
+        cardsList.innerHTML += `
+        <li data-test="card" class="card" onclick="manageGame(this)">
+            <img data-test="face-down-image" class="back-face" src="./src/img/back.png" alt="back of the card">
+            <img data-test="face-up-image" class="front-face" src="./src/img/${cardImages[i]}" alt="front of the card">
+        </li>
+        `;
     }
 }
 
