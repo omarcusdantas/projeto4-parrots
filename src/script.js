@@ -119,7 +119,7 @@ function restartGame() {
   let reboot = "";
 
   while (reboot != "sim" && reboot != "não")
-    reboot = prompt("Deseja reiniciar a partida? Responda sim ou não");
+    reboot = prompt("Você gostaria de reiniciar a partida? (sim ou não)");
 
   if (reboot === "sim") startGame();
 }
