@@ -64,7 +64,7 @@ function manageGame(card) {
     flipCard(card);
     secondCard = card;
     turns ++;
-    setTimeout(compareCards,200);         
+    setTimeout(compareCards,1000);         
 }
 
 function compareCards() {
@@ -74,10 +74,10 @@ function compareCards() {
         managePoints();
         return;
     }
-    setTimeout(flipCard,1000, firstCard);
-    setTimeout(flipCard,1000, secondCard);
-    setTimeout(() => firstCard = null, 1000);
-    setTimeout(() => secondCard = null, 1000);
+    flipCard(firstCard);
+    flipCard(secondCard);
+    firstCard = null;
+    secondCard = null;
 }
 
 function managePoints(){
